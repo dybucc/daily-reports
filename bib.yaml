@@ -1,0 +1,10 @@
+lorem:
+  type: entry
+  title: "Lorem ipsum dolor sit amet"
+  author:
+    - given-name: Lorem
+      name: Ipsum
+      alias: dolor
+  url:
+    value: "https://example.com"
+    date: 2001-01-01
