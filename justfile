@@ -15,7 +15,7 @@ git := require("git")
 
 template_ver := "0.1.4"
 template_submod := trim(shell(f'
-    mkdir -p ./pkgs/local \
+    mkdir -p ./pkgs/local/scratchpad \
     && {{ git }} clone --depth=1 --filter=blob:none \
     https://github.com/dybucc/scratchpad.git \
     ./pkgs/local/scratchpad/{{ template_ver }} \
