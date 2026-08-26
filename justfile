@@ -13,11 +13,13 @@ brew := require("brew")
 
 git := require("git")
 
+template_ver := "0.1.4"
 template_submod := trim(shell(f'
     mkdir -p ./pkgs/local \
     && {{ git }} clone --depth=1 --filter=blob:none \
     https://github.com/dybucc/scratchpad.git \
-    ./pkgs/local/scratchpad \
+    ./pkgs/local/scratchpad/{{ template_ver }} \
+    && {{ git }} checkout {{ template_ver }}  \
     && echo "pkgs"
 '))
 
