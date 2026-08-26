@@ -21,18 +21,17 @@ template_submod := trim(shell(f'
     && echo "pkgs"
 '))
 
-# [todo]: add a .env file that sets up the `TYPST_PACKAGE_PATH` variable, read
-# it from just, and test it out. This needs me first setting up a Git
-# submodule pointing to another repo where the template is hosted at. Then
-# before building, check out the module.
-
 [doc("Compiles Typst files (the reports and the site entry point) to HTML.")]
 [env("TYPST_PACKAGE_PATH", f"{{ justfile_dir() / template_submod }}")]
 build: _prepare
+    @echo {{ f"{{ style("bold", "[INFO]") }}: Typst environment:" }}
     @typst info
-    typst compile --features=html --format=html ./*.typ
+    for file in ./*.typ \
+    do \
+        typst compile --features=html --format=html $file \
+    done
 
 [macos]
 _prepare:
-    {{ brew }} install -y typst fd
+    {{ brew }} install -y typst fd font-maple-mono
     @echo {{ f"{{ style("bold", "[INFO]") }}: Pre-requisites ready!" }}
