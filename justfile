@@ -4,11 +4,14 @@ set default-list
 set lazy
 set no-exit-message
 set indentation := "    "
+set lists
 
 alias b := build
+alias p := prepare
 
 git := require("git")
 cargo := require("cargo")
+typst := which("typst")
 typst_ver := "0.15.1"
 
 template_ver := "0.1.4"
@@ -27,18 +30,23 @@ info(msg) := f"{{ style("bold", "[INFO]") }}: {{ msg }}"
 [env("TYPST_FEATURES", "html")]
 [env("TYPST_FONT_PATHS", f"{{ justfile_dir() / "maple-mono" }}")]
 [env("TYPST_PACKAGE_PATH", f"{{ justfile_dir() / template_submod }}")]
-build: _prepare
+build: && _compile
     @echo {{ info("Pre-requisites set up!") }}
     @echo {{ info("Typst environment") }}
     @typst info
-    for file in ./*.typ \
-    do \
-        typst compile --format=html $file \
-    done
 
-_prepare:
+[doc("Installs Typst in an environment that doesn't feature it.")]
+prepare:
+    {{ if typst { error("typst is already installed") } else { "" } }}
     {{ cargo }} install \
         --git https://github.com/typst/typst.git \
         --tag {{ "v" + typst_ver }} \
         --locked \
         typst-cli
+
+_compile:
+    #!/usr/bin/env -S sh
+    for file in ./*.typ
+    do
+        typst compile --format=html $file
+    done

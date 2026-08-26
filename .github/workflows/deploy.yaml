@@ -2,6 +2,8 @@ on:
   - workflow_dispatch
   - push
 
+# [todo]: set up caching of the Typst installation we make in the justfile
+
 jobs:
   build:
     runs-on: ubuntu-latest
