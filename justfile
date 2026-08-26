@@ -41,4 +41,4 @@ _prepare:
         --git https://github.com/typst/typst.git \
         --tag {{ "v" + typst_ver }} \
         --locked \
-        -p typst-cli
+        typst-cli
