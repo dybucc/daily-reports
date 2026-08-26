@@ -3,14 +3,11 @@ on:
   - push
 
 jobs:
-  checkout:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
   build:
     runs-on: macos-latest
-    needs: checkout
     steps:
+      - name: Clone
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Configure GitHub Pages
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
       - name: Set up Just
