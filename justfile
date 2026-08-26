@@ -38,5 +38,7 @@ build: _prepare
 
 _prepare:
     {{ cargo }} install \
-        --git https://github.com/typst/typst.git --tag {{ "v" + typst_ver }} \
-        --locked
+        --git https://github.com/typst/typst.git \
+        --tag {{ "v" + typst_ver }} \
+        --locked \
+        -p typst-cli
