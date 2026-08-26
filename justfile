@@ -1,10 +1,8 @@
 set minimum-version := "1.56.0"
-set unstable
 set default-list
 set lazy
 set no-exit-message
 set indentation := "    "
-set lists
 
 alias b := build
 
@@ -15,10 +13,10 @@ git := require("git")
 
 template_ver := "0.1.4"
 template_submod := trim(shell(f'
-    mkdir -p ./pkgs/local/scratchpad \
+    mkdir -p ./pkgs/local/scratchpad/{{ template_ver }} \
+    && cd ./pkgs/local/scratchpad/{{ template_ver }} \
     && {{ git }} clone --depth=1 --filter=blob:none \
-    https://github.com/dybucc/scratchpad.git \
-    ./pkgs/local/scratchpad/{{ template_ver }} \
+    https://github.com/dybucc/scratchpad.git . \
     && {{ git }} checkout {{ template_ver }}  \
     && echo "pkgs"
 '))
