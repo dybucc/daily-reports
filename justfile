@@ -18,7 +18,6 @@ template_submod := trim(shell(f'
     && {{ git }} clone --depth=1 --filter=blob:none \
     https://github.com/dybucc/scratchpad.git \
     ./pkgs/local/scratchpad \
-    # &>/dev/null \
     && echo "pkgs"
 '))
 
