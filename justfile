@@ -1,4 +1,5 @@
 set minimum-version := "1.56.0"
+set unstable
 set default-list
 set lazy
 set no-exit-message
