@@ -13,12 +13,13 @@ brew := require("brew")
 git := require("git")
 
 template_submod := trim(shell(f'
-    mkdir -p ./local \
+    mkdir -p ./pkgs/local \
     && {{ git }} clone --depth=1 --filter=blob:none \
-    https://github.com/dybucc/scratchpad.git ./local/scratchpad &>/dev/null \
-    && echo "local"
+    https://github.com/dybucc/scratchpad.git \
+    ./pkgs/local/scratchpad \
+    # &>/dev/null \
+    && echo "pkgs"
 '))
-typst_files := trim(replace(shell('fd -e "typ"'), '\n', ' '))
 
 # [todo]: add a .env file that sets up the `TYPST_PACKAGE_PATH` variable, read
 # it from just, and test it out. This needs me first setting up a Git
@@ -28,9 +29,10 @@ typst_files := trim(replace(shell('fd -e "typ"'), '\n', ' '))
 [doc("Compiles Typst files (the reports and the site entry point) to HTML.")]
 [env("TYPST_PACKAGE_PATH", f"{{ justfile_dir() / template_submod }}")]
 build: _prepare
-    typst compile --features=html --format=html {{ typst_files }}
+    @typst info
+    typst compile --features=html --format=html ./*.typ
 
 [macos]
 _prepare:
     {{ brew }} install -y typst fd
-    @echo {{ f"{{ style("bold", "[INFO]") }} Pre-requisites ready!" }}
+    @echo {{ f"{{ style("bold", "[INFO]") }}: Pre-requisites ready!" }}
