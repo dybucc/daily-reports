@@ -3,18 +3,13 @@ on:
   - push
 
 jobs:
-  configure-pages:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
-  setup-just:
-    runs-on: macos-latest
-    steps:
-      - uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
   build:
     runs-on: macos-latest
-    needs: setup-just
     steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
+      - name: Set up Just
+        uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
       - name: Build files
         run: just b
       - name: Package files
