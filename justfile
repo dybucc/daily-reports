@@ -32,11 +32,10 @@ template_submod := trim(shell(f'
 
 info(msg) := f"{{ style("bold", "[INFO]") }}: {{ msg }}"
 
-export TYPST_FEATURES := "html"
-export TYPST_FONT_PATHS := f"{{ justfile_dir() / "maple-mono" }}"
-export TYPST_PACKAGE_PATH := f"{{ justfile_dir() / template_submod }}"
-
 [doc("Compiles Typst files (the reports and the site entry point) to HTML.")]
+[env("TYPST_FEATURES", "html")]
+[env("TYPST_FONT_PATHS", f"{{ justfile_dir() / "maple-mono" }}")]
+[env("TYPST_PACKAGE_PATH", f"{{ justfile_dir() / template_submod }}")]
 @build: && _compile
     echo {{ info("Typst environment") }}
     typst info
@@ -56,6 +55,9 @@ export TYPST_PACKAGE_PATH := f"{{ justfile_dir() / template_submod }}"
 @typst-version:
     echo "version={{ typst_ver }}"
 
+[env("TYPST_FEATURES", "html")]
+[env("TYPST_FONT_PATHS", f"{{ justfile_dir() / "maple-mono" }}")]
+[env("TYPST_PACKAGE_PATH", f"{{ justfile_dir() / template_submod }}")]
 _compile:
     #!/usr/bin/env -S sh
     for file in ./*.typ
