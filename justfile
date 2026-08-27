@@ -5,6 +5,7 @@ set lazy
 set no-exit-message
 set indentation := "    "
 set lists
+set guards
 
 alias b := build
 alias p := prepare
