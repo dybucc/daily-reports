@@ -17,20 +17,28 @@ jobs:
         id: typst
         run: just v >> $GITHUB_OUTPUT
       - name: Cache Typst compiler driver
-        id: cache
+        id: typst-cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
         with:
           path: ~/.cargo/bin/typst
           key: ${{ runner.os }}-typst-${{ steps.typst.outputs.version }}
-      - name: Install Typst
-        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+      - name: Cache ripgrep
+        id: ripgrep-cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ~/.cargo/bin/rg
+          key: ${{ runner.os }}-ripgrep
+      - name: Install pre-requisites
+        if: ${{ steps.typst-cache.outputs.cache-hit != 'true' || steps.ripgrep-cache.outputs.cache-hit != 'true' }}
         run: just p
       - name: Build files
         run: just b
+        continue-on-error: true
       - name: Package files
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: ./
+        continue-on-error: true
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest

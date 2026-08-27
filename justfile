@@ -13,6 +13,7 @@ alias v := typst-version
 git := require("git")
 cargo := require("cargo")
 typst := which("typst")
+rg := which("rg")
 typst_ver := "0.15.1"
 
 template_ver := trim(```
@@ -39,14 +40,16 @@ build: && _compile
     @echo {{ info("Typst environment") }}
     @typst info
 
-[doc("Installs the Typst compiler driver in an environment that doesn't feature it.")]
+[doc("Installs typst-cli and ripgrep if not in PATH. Used in CI.")]
 prepare:
-    {{ if typst { error("typst is already installed") } else { "" } }}
+    ?{{ if typst { "return 1" } else { "return 0" } }}
     {{ cargo }} install \
         --git https://github.com/typst/typst.git \
         --tag {{ "v" + typst_ver }} \
         --locked \
         typst-cli
+    ?{{ if rg { "return 1" } else { "return 0" } }}
+    {{ cargo }} install ripgrep
 
 [doc("Reports the Typst compiler version in use. Used in CI.")]
 @typst-version:
