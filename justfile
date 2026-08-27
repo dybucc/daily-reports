@@ -32,6 +32,11 @@ template_submod := trim(shell(f'
 
 info(msg) := f"{{ style("bold", "[INFO]") }}: {{ msg }}"
 
+# [NOTE]: we set up the same environment variables across recipes because their
+# values depend on a lazily computed just variable that itself depends on some
+# programs being available in PATH, which themselves depend on the `prepare`
+# recipe in CI.
+
 [doc("Compiles Typst files (the reports and the site entry point) to HTML.")]
 [env("TYPST_FEATURES", "html")]
 [env("TYPST_FONT_PATHS", f"{{ justfile_dir() / "maple-mono" }}")]
