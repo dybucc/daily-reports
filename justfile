@@ -32,17 +32,17 @@ template_submod := trim(shell(f'
 
 info(msg) := f"{{ style("bold", "[INFO]") }}: {{ msg }}"
 
+export TYPST_FEATURES := "html"
+export TYPST_FONT_PATHS := f"{{ justfile_dir() / "maple-mono" }}"
+export TYPST_PACKAGE_PATH := f"{{ justfile_dir() / template_submod }}"
+
 [doc("Compiles Typst files (the reports and the site entry point) to HTML.")]
-[env("TYPST_FEATURES", "html")]
-[env("TYPST_FONT_PATHS", f"{{ justfile_dir() / "maple-mono" }}")]
-[env("TYPST_PACKAGE_PATH", f"{{ justfile_dir() / template_submod }}")]
-build: && _compile
-    @echo {{ info("Pre-requisites set up!") }}
-    @echo {{ info("Typst environment") }}
-    @typst info
+@build: && _compile
+    echo {{ info("Typst environment") }}
+    typst info
 
 [doc("Installs typst-cli and ripgrep if not in PATH. Used in CI.")]
-prepare:
+@prepare:
     ?{{ if typst { "return 1" } else { "return 0" } }}
     {{ cargo }} install \
         --git https://github.com/typst/typst.git \
@@ -50,7 +50,7 @@ prepare:
         --locked \
         typst-cli
     ?{{ if rg { "return 1" } else { "return 0" } }}
-    {{ cargo }} install ripgrep
+    {{ cargo }} install --locked ripgrep
 
 [doc("Reports the Typst compiler version in use. Used in CI.")]
 @typst-version:
