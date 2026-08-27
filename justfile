@@ -8,13 +8,17 @@ set lists
 
 alias b := build
 alias p := prepare
+alias v := typst-version
 
 git := require("git")
 cargo := require("cargo")
 typst := which("typst")
 typst_ver := "0.15.1"
 
-template_ver := "0.1.4"
+template_ver := trim(```
+  rg -N -m 1 -s -e '(?m)^.*\d+\.\d+\.\d+' ./index.typ \
+  | rg -N -s -o -e '\d+\.\d+\.\d+'
+```)
 template_submod := trim(shell(f'
     mkdir -p ./pkgs/local/scratchpad/{{ template_ver }} \
     && cd ./pkgs/local/scratchpad/{{ template_ver }} \
@@ -35,7 +39,7 @@ build: && _compile
     @echo {{ info("Typst environment") }}
     @typst info
 
-[doc("Installs Typst in an environment that doesn't feature it.")]
+[doc("Installs the Typst compiler driver in an environment that doesn't feature it.")]
 prepare:
     {{ if typst { error("typst is already installed") } else { "" } }}
     {{ cargo }} install \
@@ -43,6 +47,10 @@ prepare:
         --tag {{ "v" + typst_ver }} \
         --locked \
         typst-cli
+
+[doc("Reports the Typst compiler version in use. Used in CI.")]
+@typst-version:
+    echo "version={{ typst_ver }}"
 
 _compile:
     #!/usr/bin/env -S sh

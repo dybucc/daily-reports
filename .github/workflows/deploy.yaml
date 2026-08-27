@@ -2,10 +2,9 @@ on:
   - workflow_dispatch
   - push
 
-# [todo]: set up caching of the Typst installation we make in the justfile
-
 jobs:
   build:
+    name: Build HTML files
     runs-on: ubuntu-latest
     steps:
       - name: Clone
@@ -14,13 +13,26 @@ jobs:
         uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
       - name: Set up Just
         uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3
+      - name: Fetch Typst version
+        id: typst
+        run: just v >> $GITHUB_OUTPUT
+      - name: Cache Typst compiler driver
+        id: cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ~/.cargo/bin/typst
+          key: ${{ runner.os }}-typst-${{ steps.typst.outputs.version }}
+      - name: Install Typst
+        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+        run: just p
       - name: Build files
         run: just b
       - name: Package files
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         with:
           path: ./
-  deploy-pages:
+  deploy:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -28,7 +40,8 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      url: ${{ steps.deployment.output.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128
