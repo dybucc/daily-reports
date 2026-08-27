@@ -5,6 +5,10 @@ daily reports akin to those I compiled during GSoC 2026, but it further expands
 their contents with a discussion on matters non-Rust (which is to say, at the
 time of writing, OCaml and side projects.)
 
+The commits that lead to the initial "stable" release, including the first two
+daily reports, can be found (with their original commit author timestamps) in
+the `pre` branch.
+
 ## Technical details
 
 The site is built with Typst, and uses the experimental HTML export alongside
