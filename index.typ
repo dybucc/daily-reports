@@ -9,7 +9,7 @@ I've done throughout the day. The contents focus solely on coding/research. They
 contain news on my work in rust-lang/libc and rust-lang/rust, as well as
 discussion on personal projects.
 
-#let reports = ([2026-08-25], [2026-08-26])
+#let reports = ([2026-08-25], [2026-08-26], [2026-08-27])
 #let report-list = for report in reports {
   [- #link("./" + report.text + ".html", report)]
 }
