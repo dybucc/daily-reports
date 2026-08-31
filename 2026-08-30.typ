@@ -2,6 +2,8 @@
 
 #show: template.with(title: [Daily report (2026-08-30)])
 
+#title()
+
 = Summary
 Today work has focused on fixing the CI failures in rust-lang/libc, working some
 more into an issue I started on by the end of GSoC, and on further advacing the
