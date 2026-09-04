@@ -11,9 +11,9 @@ book on a compiler implementation in ML, and on further advancing work on the
 
 I started off by tweaking a bit the operator expression in the Typst compiler,
 and starting to read through chapter 3 of the _Modern compiler implementation in
-ML_ book. I wanted to understand some more $"LALR"(1)$ grammars, and possibly
-get some tips on both solving reduce/reduce conflicts and designing a grammar
-that is primarily left-recursive.
+ML_ book. I wanted to understand some more LALR(1) grammars, and possibly get
+some tips on both solving reduce/reduce conflicts and designing a grammar that
+is primarily left-recursive.
 
 I have almost finished the chapter, and have learnt about the exact opposite to
 achieving left-recursion, which is great because reversing those steps seems
