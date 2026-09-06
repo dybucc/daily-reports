@@ -10,6 +10,7 @@ set guards
 alias b := build
 alias p := prepare
 alias v := typst-version
+alias n := new-date
 
 git := require("git")
 cargo := require("cargo")
@@ -59,6 +60,10 @@ info(msg) := f"{{ style("bold", "[INFO]") }}: {{ msg }}"
 [doc("Reports the Typst compiler version in use. Used in CI.")]
 @typst-version:
     echo "version={{ typst_ver }}"
+
+[doc("Creates a new file with today's date as file name.")]
+@new-date:
+    touch {{ shell('date "+%Y-%m-%d"') + ".typ" }}
 
 [env("TYPST_FEATURES", "html")]
 [env("TYPST_FONT_PATHS", f"{{ justfile_dir() / "maple-mono" }}")]
