@@ -1,6 +1,6 @@
 #import "@local/scratchpad:0.1.4": *
 
-#show: template.with([Daily report (2026-09-08])
+#show: template.with(title: [Daily report (2026-09-08])
 
 #title()
 
