@@ -9,6 +9,11 @@ The commits that lead to the initial "stable" release, including the
 first two daily reports, can be found (with their original commit author
 timestamps) in the `pre` branch.
 
+>[!NOTE]
+>The commit timestamps are useless here because I often rewrite the Git
+>history. Clone the repo and look at the authorship date of the commits
+>to verify my track record.
+
 ## Technical details
 
 The site is built with Typst, and uses the experimental HTML export
