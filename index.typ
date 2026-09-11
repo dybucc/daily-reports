@@ -27,6 +27,7 @@ discussion on personal projects.
   [2026-09-08],
   [2026-09-09],
   [2026-09-10],
+  [2026-09-11],
 )
 #let report-list = for report in reports {
   [- #link("./" + report.text + ".html", report)]
