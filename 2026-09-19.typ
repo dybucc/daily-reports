@@ -2,6 +2,8 @@
 
 #show: template.with(title: [Daily report (2026-09-19)])
 
+#title()
+
 = Summary
 Today work has focused solely on one thing; Proving a property of the demo
 program for the `ctest` module extension. This has melded both of my current
