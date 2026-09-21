@@ -2,6 +2,8 @@
 
 #show: template.with(title: [Daily report (2026-09-20)])
 
+#title()
+
 = Summary
 Today work has focused again on completing the proof for the Idris demo to the
 algorithms I designed for the purposes of extending the `ctest` test harness
