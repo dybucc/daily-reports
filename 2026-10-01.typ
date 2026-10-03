@@ -4,8 +4,8 @@
 
 #title()
 
-#quote[Today the style is different. More tacit expressions are used. Less
-  verbose forms are used. This should make the reports clearer.]
+#html.blockquote[Today the style is different. More tacit expressions are used.
+  Less verbose forms are used. This should make the reports clearer.]
 
 = Summary
 Today work has focused on two things. Work on the CI set up continues. This is
