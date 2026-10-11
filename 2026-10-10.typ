@@ -62,7 +62,7 @@ coproduct. Composition ensures the rhs will get parts of the map proposition.
 The lhs is a partially applied composition.
 
 This latter composition acts as proof witness. It also "adds" another assumption
-to the proposition resulting from composition. Note how the value projection
+to the proposition resulting from composition. Note how the `value` projection
 needs a `First` to extract the coproduct.
 
 The outer composition can then yield the rhs as a partially applied map. It has
