@@ -58,13 +58,13 @@ The first assumption is the transform. The second is the product. It has one
 projection to another coproduct. One corresponds with an injective const
 functor. The other corresponds with an identity functor.
 
-`First` a is essentially a wrapper for `Maybe`. The first map is over the inner
+`First a` is essentially a wrapper for `Maybe`. The first map is over the inner
 coproduct. Composition ensures the rhs will get parts of the map proposition.
 The lhs is a partially applied composition.
 
 This latter composition acts as proof witness. It also "adds" another assumption
 to the proposition resulting from composition. Note how the value projection
-needs a First to extract the coproduct.
+needs a `First` to extract the coproduct.
 
 The outer composition can then yield the rhs as a partially applied map. It has
 the guarantee that the rhs will provide the functor of the map. In this instance
