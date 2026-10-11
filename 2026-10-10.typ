@@ -46,7 +46,6 @@ The best example of this is the following one-liner.
 
 ```idris
 mapFirst : (a -> b) -> First a -> First b
-
 mapFirst = MkFirst .: (. value) . map
 ```
 
