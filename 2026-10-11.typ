@@ -87,6 +87,10 @@ The quantified proposition (type) itself is included up top. Proposition
 `pureLast` is a utility to avoid cluttering an `Applicative` interface
 implementation. That just wraps some proof of `a` in the product.
 
+#html.blockquote[*Edit (one day after)*: often times the reports mess something
+  up. This time that was speaking of eta-abstraction as a reduction. `foo` is an
+  eta-abstraction. Other `foo` primed are reductions.]
+
 Each proposition in the namespace is an iteration in the thought process. The
 very first one (`foo`) is a reduction of a straightforward implementation. It is
 tacit in that it refers to no proofs of its assumptions.
