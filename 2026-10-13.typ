@@ -55,9 +55,9 @@ Show a => Show (Last a) where
   showPrec = (. ("MkLast" ,) . showArg . value) . uncurry . showCon
 ```
 
-In Idris, one may implement one of show or `showPrec` as propositions associated
-with the `Show` interface. `show` seemed like too easy for a tacit challenge.
-`showPrec` requires more thought.
+In Idris, one may implement one of `show` or `showPrec` as propositions
+associated with the `Show` interface. `show` seemed like too easy for a tacit
+challenge. `showPrec` requires more thought.
 
 It assumes two proofs. The first one is a precedence level dictating the
 nestedness of the string in some other wrapping `Show` interface implementation.
@@ -68,12 +68,13 @@ The second one is a value of the type. A traditional proof would use the
 and the `showArg` proposition to get a string representation of its arguments.
 
 The tacit expression also does that. It is best to read from right to left
-instead of from left to right, as that is also the order of application. it
+instead of from left to right, as that is also the order of application. It
 first partially applies `showCon` with the precedence assumption.
 
 Then it uncurries the yet-to-be-applied assumptions of `showCon`; The value and
 the arguments. Then the next proof passed to `showPrec` is a value of type
-`Last a`. That gets its inner coproduct extracted through the value projection.
+`Last a`. That gets its inner coproduct extracted through the `value`
+projection.
 
 Then that gets fed into the `showArg` proposition, and applied as the remaining
 (right) element of the canonical product (an unlabeled pair.) This then gets fed
@@ -88,5 +89,5 @@ some more through why I think it is correct. It would be ideal to eventually
 come up with a formal proof so that I am reassured of its correctness.
 
 Idris work will continue as per the usual. I am starting to doubt yesterday's
-statement about point-free style not beign possible when matching against a
-custom coproduct with more than one injection.
+statement about point-free style not being possible when matching against a
+"custom" coproduct with more than one injection.
