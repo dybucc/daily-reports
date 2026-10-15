@@ -88,7 +88,7 @@ None.
 = Plan for the week
 The `ctest` extension work will continue tomorrow. Today I have also posted some
 comments on a relevant issue thread in `rust-lang/libc` concerning types that
-suddently become `!Send` because we changed something in the bindings.
+suddenly become `!Send` because we changed something in the bindings.
 
 That one is still not completely solved. Idris work will continue as per the
 usual, though I've been working on a problem today that will be absolutely
