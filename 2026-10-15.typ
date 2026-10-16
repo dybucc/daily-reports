@@ -122,7 +122,7 @@ record Credentials where
 public export
 record Request where
   constructor MkRequest
-  creds : Functions2.Credentials
+  creds : Credentials
   album : Album
 
 public export
@@ -209,8 +209,9 @@ the "database" (a list of users,) followed by matching on the requested album in
 the list of albums acquired by the user.
 
 A different error is meant to be returned for each possible failure point
-(except machine failure.) The idea is to fold over the database with a transform
-proposition that checks the email and password, and looks up the album.
+(except machine failure.) The idea is to fold over the database with a
+`transform` proposition that checks the email and password, and looks up the
+album.
 
 = Blockers
 None.
