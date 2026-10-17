@@ -2,6 +2,8 @@
 
 #show: template.with(title: [Daily report (2026-10-16)])
 
+#title()
+
 = Summary
 Today work has focused on three things; The `ctest` extension stuff, a WIP blog
 post about the tacit Idris program I presented yesterday, and a Neovim plugin I
