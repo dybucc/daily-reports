@@ -4,6 +4,8 @@
 
 #title()
 
+// [TODO]: set up fonts so that the HTML files also get to use Maple Mono.
+
 This page compiles all of my daily reports, which contain information on what
 I've done throughout the day. The contents focus solely on coding/research. They
 contain news on my work in rust-lang/libc and rust-lang/rust, as well as
@@ -63,6 +65,7 @@ discussion on personal projects.
   [2026-10-14],
   [2026-10-15],
   [2026-10-16],
+  [2026-10-17],
 )
 #let report-list = for report in reports {
   [- #link("./" + report.text + ".html", report)]
