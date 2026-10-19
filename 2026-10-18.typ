@@ -14,8 +14,8 @@ The local files I intended on manipulating are ready, and the server now serves
 successfully everytime I execute the mitmproxy binary.
 
 Later on, I continued with the Idris blog post, but halfway through it I decided
-to git Haskell a try. That turned out quite badly because one easily notices how
-Haskell language extensions are far from being native to the language.
+to give Haskell a try. That turned out quite badly because one easily notices
+how Haskell language extensions are far from being native to the language.
 
 For starters, stuff like type inference of record field selectors just doesn't
 work. There's a bunch of extensions to make it seem like it works until you
@@ -27,7 +27,7 @@ start wondering why does something fail to typecheck.
 
 That, and the fact dependent Haskell seems to be stalled, prompted me to go take
 another look at Lean. I've been working through the Number Theory Game, and have
-started reading and solving problems from a book on Lean.
+started reading and solving problems from a book on it.
 
 Eventually, I would like to read through and solve the problems in the Lean
 theorem prover book, as that one does introduce more formal notions. One thing I
