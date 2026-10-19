@@ -25,9 +25,9 @@ hold over what was I working on at a time. Now it's all split into modules.
 None.
 
 = Plan for the week
-The intercepting proxy work will continues tomorrow. I hope to have finished
-with it, because I would like to move on to more interesting intellectual
-endeavors next weekend.
+The intercepting proxy work will continue tomorrow. I hope to have finished with
+it, because I would like to move on to more interesting intellectual endeavors
+next weekend.
 
 The Idris community tutorial time span will hit its hard cap tomorrow. Clearly,
 it's unfinished, but the blog post should likely be ready. Otherwise, it will be
