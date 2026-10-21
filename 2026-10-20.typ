@@ -59,11 +59,13 @@ parsing logic and the filtering logic, but that is not yet finished.
 
 In terms of Lean work, I've had great success in solving a bunch more problems.
 Of course, I always go for tacit solutions, but sometimes that just doesn't seem
-possible; Chief among these is a Functor's map implementation on some sum type.
+possible; Chief among these is a `Functor`'s map implementation on some sum
+type.
 
-Still, it seems like given at least a Foldable's type class implementation, you
-are pretty much set up for continuous tacit solutions. In product types, these
-are always possible, but sum types seem to require some base infrastructure.
+Still, it seems like given at least a `Foldable`'s type class implementation,
+you are pretty much set up for continuous tacit solutions. In product types,
+these are always possible, but sum types seem to require some base
+infrastructure.
 
 There are a few things that seem downright strange in Lean, though. For some
 reason, they diverge from the more traditional approach of using explicit type

@@ -19,15 +19,15 @@ realizing where the main flaws were in my reasoning from last week.
 
 All in all, the logic is the same, but there are a few things I had to tweak.
 Chiefly, the strategy was a bit too complex when it came to handling codata.
-Recall this consisted of potentially non-terminating cyclic use declarations.
+Recall this consisted of potentially non-terminating cyclic `use` declarations.
 
-This turned out to be simpler to solve than I had originally thought. Any use
+This turned out to be simpler to solve than I had originally thought. Any `use`
 declaration that is super-relative can be safely assumed to require removal of
 the module where it is sourced from once the ancestor module is fetched.
 
-In other words, once we go through all super segments in the use declaration's
-path, we can safely search the module where the use declaration appeared at in
-the resulting subtree, remove it, and then yield the subtree.
+In other words, once we go through all `super` segments in the `use`
+declaration's path, we can safely search the module where the `use` declaration
+appeared at in the resulting subtree, remove it, and then yield the subtree.
 
 This way, we avoid the whole business with some module living nested within
 itself but containig a potentially less up-to-date copy of the module tree. This
@@ -43,7 +43,7 @@ to find in the Prelude is actually in the CSLib and MathLib libraries.
 
 It's also been great fun to discover that Lean supports operator sections, akin
 to those of Haskell or Idris. The unfortunate difference is that you need to be
-explicit about the missing argument with a Unicode dot on missing arguments.
+explicit about the missing argument with a Unicode dot.
 
 = Blockers
 None.
