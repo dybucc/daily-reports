@@ -15,7 +15,7 @@ the implementation would have turned out badly.
 
 I started taking more notes and this time illustrating those with example graphs
 of the crate module trees and the associated reexports. This helped me out in
-realizing where the main flaws were in my reasoning from last week were.
+realizing where the main flaws were in my reasoning from last week.
 
 All in all, the logic is the same, but there are a few things I had to tweak.
 Chiefly, the strategy was a bit too complex when it came to handling codata.
