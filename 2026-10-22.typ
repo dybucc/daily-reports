@@ -105,6 +105,8 @@ trait. This I really don't have time to explain today, so consider it extra
 credit (if you happen to not be too good at point-free style programming.)
 
 ```lean
+def Function.apply : {α β : Type*} → (α → β) → α → β := id
+
 def ifThenElse : {α : Type} → Bool → α → α → α :=
 open Function Const in
   ((·∘ (flip ∘ curry $ (flip ∘ uncurry $ Option.elim) id))
@@ -119,20 +121,20 @@ where
   f :=
   open Function Prod Nat Const in
     (·∘ (() ,·))
-    ∘ uncurry bimap
-      ∘ bimap
-        const
-        (uncurry apply ∘ Bifunctor.fst (uncurry ∘ ifThenElse))
+      ∘ uncurry bimap
         ∘ bimap
-          (pred ∘ fst ∘ fst)
-          (bimap
-            (uncurry (·==·) ∘ bimap (pred ∘ fst) fst ∘ dup)
+          const
+          (uncurry apply ∘ Bifunctor.fst (uncurry ∘ ifThenElse))
+          ∘ bimap
+            (pred ∘ fst ∘ fst)
             (bimap
-              ((·∘ const []) ∘ (·++·) ∘ snd)
-              ((·∘ List.singleton) ∘ (·++·) ∘ snd)
-               ∘ dup))
-          ∘ dup
+              (uncurry (·==·) ∘ bimap (pred ∘ fst) fst ∘ dup)
+              (bimap
+                ((·∘ const []) ∘ (·++·) ∘ snd)
+                ((·∘ List.singleton) ∘ (·++·) ∘ snd)
+                 ∘ dup))
             ∘ dup
+              ∘ dup
 ```
 
 = Blockers
