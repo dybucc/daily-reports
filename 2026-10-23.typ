@@ -18,8 +18,8 @@ container. I realized that at this point we'd be best off coming up with an
 iterator of our own over all the items in a module.
 
 This, of course, benefitted both the item lookup we use during resolution, and
-the search for items we perform when searching for occurrences of the same item
-across the crate (what I mentioned two paragraphs up.)
+the above search for an item's occurrences across the crate under different
+paths.
 
 The idea for this latter function is fairly simple; We perform the same
 depth-first traversal of a given module tree, and accumulate a list of all items
