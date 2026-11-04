@@ -31,8 +31,8 @@ merging function causes resolution to altogether have no effects. This is fairly
 strange because I've yet to find out what am I missing in that one bit.
 
 Lean-wise, things have gone fairly well. I've learnt about the way monads are
-used in Lean, and thus far it seems fairly similar to Haskell and others.
-Notably, I also tried implementing a type class for representable functors.
+used in Lean, and thus far it seems similar to Haskell and others. Notably, I
+also tried implementing a type class for representable functors.
 
 Suffice to say, lazy-evaluation in Haskell gets a lot of stuff out of the way
 when you're thinking about indexing into some potentially non-finite functor. I
@@ -52,7 +52,7 @@ representable functors. This typeclass method itself checks for inhabitedness.
 
 Overall, it seemed, to a first approximation and without giving it too much
 thought, that streams need something else to encode the fact they're infinite
-but are not expected to be wholly computable within some finite amount of time.
+but are not expected to be wholly computable within finite time.
 
 = Blockers
 None.
