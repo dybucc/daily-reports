@@ -14,8 +14,8 @@ issues I've found as I was printf-debugging the code. The details I will leave
 to the PR to explain itself because I barely remember them as I write this.
 
 At present, I'm trying to solve another bug that duplicates the paths of a given
-item in its aggregate after some yet undetermined number of times having been
-imported into another module.
+item in its aggregate after some yet undetermined number of times of it having
+been imported into another module.
 
 This I am reluctant to continue solving because it crossed my mind towards the
 end of the day that I could potentially replace the path aggregate system with
