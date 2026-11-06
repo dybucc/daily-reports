@@ -36,7 +36,7 @@ mind I had towards the end of the day, so chances of being wrong were higher.
 
 Lean-wise, things have gone quite well; I kept working through more monad
 problems, and have had two beautiful tacit definitions for a reader monad that
-is contrained in its codomain by one of an `Option` or an `Except`.
+is constrained in its codomain by one of an `Option` or an `Except`.
 
 In Lean, `Option` is a two-injection sum with the identity functor representing
 one injection and the injective const functor to unit representing the other.
@@ -103,7 +103,8 @@ This I both solved through the #sym.Phi combinator as well as a combination of
 the B and B#sub([1]) combinators.
 
 In the above code, the phoenix is encoded as the #sym.Phi greek letter, while
-the bluebird and blackbird are encoded with the same glyph as used in APL; ⍤.
+the bluebird and blackbird are encoded with the same glyphs as used in APL; ∘
+and ⍤, respectively.
 
 The steps I followed from #sym.eta;-expansion and subsequent
 #sym.beta;-reductions are included as comments above the one-liners that define
