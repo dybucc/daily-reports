@@ -17,7 +17,7 @@ The approach with the state monad remains as explained in yesterday's report.
 The monad essentially captures the current module's path and the UID of the
 items. The UID is then incremented whenever we're sequencing a computation.
 
-I was honestly surprised at the amount of code that got suddently clearer. The
+I was honestly surprised at the amount of code that got suddenly clearer. The
 state monad barely comes at an apparent cost in space beyond the fact it forces
 its use to be linear, and thus the whole thing is full of ownership transfers.
 
