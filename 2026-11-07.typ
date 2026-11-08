@@ -10,8 +10,8 @@ working through the Lean problem on the arithmetic evaluator, and have also made
 progress on the Haskell course I started last weekend.
 
 The Lean book work has been slow but that's been because I woke up and decided
-to give myself a shot at encoding in Lean the Yoneda isomorphism from the Yoneda
-embedding in category theory.
+to give myself a shot at encoding in Lean the Yoneda isomorphism (or rather,
+one-to-one correspondence) from the Yoneda lemma in category theory.
 
 That took a while because I was basing myself off of the way it's defined in
 Haskell, which always has an implicit universal quantifier prepended to all
