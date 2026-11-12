@@ -46,12 +46,11 @@ that made no sense. Simple list mappings failed to typecheck even though there
 were no apparent issues. Unification was failing to solve metavariables.
 
 = Blockers
-None
+None.
 
 = Plan for the week
-I expect to continue working on the `ctest` extension matters by tomorrow. I
-still have to set up some more of the analogous types in the Haskell program,
-but that shouldn't take long. I hope to have more leeway to think clearly in
-Haskell.
+I expect to continue working on the `ctest` extension matters tomorrow. I still
+have to set up some more of the analogous types in the Haskell program, but that
+shouldn't take long. I hope to have more leeway to think clearly in Haskell.
 
 Lean-wise, work will continue as per the usual.
