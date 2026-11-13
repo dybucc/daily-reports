@@ -47,10 +47,10 @@ failing test case.
 
 Lean-wise, work went into, again, the parsing implementation of the multiway
 arithmetic evaluator. That has gone fairly well, but it's not done yet. This
-time I've worked on lexing and parsing spanned but undelimitted tokens.
+time I've worked on lexing and parsing spanned but undelimited tokens.
 
 I first started off by continuing work on parsing binary operations, which
-propmted me to work on parsing spanned tokens. I already worked on delimitted
+prompted me to work on parsing spanned tokens. I already worked on delimited
 tokens yesterday, but this time it was about full naturals and such stuff.
 
 This also got me to make a distinction between token streams and atoms. The
@@ -59,7 +59,7 @@ type and the raw strings resulting from lexical analysis.
 
 I ended up not working anymore on this because some stuff I had not yet finished
 in my Neovim configuration was getting annoying. So I culminated the day with
-that; I have fixed a bunch of stuff concerned with some self-made plugins.
+that --- I have fixed a bunch of stuff concerned with some self-made plugins.
 
 Chief among them was the cursor centering plugin, which I had gotten working in
 normal mode, but not quite so in insert mode. I reviewed the code after a few
