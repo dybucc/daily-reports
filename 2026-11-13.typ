@@ -5,7 +5,7 @@
 #title()
 
 = Summary
-Today work has focused solely on one thing; Tweaking my Neovim configuration.
+Today work has focused solely on one thing --- Tweaking my Neovim configuration.
 This followed up from yesterday's efforts, this time finalizing an
 implementation of an in-process language server for minor formatting tasks.
 
@@ -26,12 +26,12 @@ but that didn't pan out so I went down the LSP path. In Neovim, you can spawn
 language servers that are either or both controlled and handled by the client.
 
 The idea is to have a bunch of functions be tied to a server table that is yield
-back to Neovim in much the same way as "low-level" handling of a JSON-RPC
+back to Neovim in much the same way as "low-level" handling of JSON-RPC
 communication with a server would. Except the whole thing is in-process.
 
-There's not much to highlight from the implementation, except for the fact I
-decided to go down a simpler route than an actual server. Generally, language
-servers have not the slightest idea about the client-side of things.
+And that's about it. One thing to note is that I decided to go down a simpler
+route than traditional language servers. Generally, language servers have not
+the slightest idea about the client-side of things.
 
 But in this case, I know all too well I'm running Neovim as the client, and I've
 got functions to convert back and forth between document URIs and buffer
@@ -55,4 +55,4 @@ this weekend with time spent on the `ctest` extension matters.
 
 Still, I believe I will have to make more changes to the Neovim configuration so
 as to also tweak other formatter integrations I built that suffered from much
-the same flaw as the one described above.
+the same flaw as the one described in today's summary.
