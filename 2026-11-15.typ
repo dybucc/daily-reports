@@ -13,9 +13,9 @@ I started off by tweaking a bunch of stuff from the proxy server --- That didn't
 take too long. Afterwards, I moved on to review yesterday's work on the Neovim
 configuration, and on tweaking my configuration for the Lua language server.
 
-This was not too time-consuming --- The language server uncovered a few mistakes
-I had made in my implementation of the in-process LS/formatter. That spun out
-into a fairly deep rabbit hole.
+This was not too time-consuming either --- The language server uncovered a few
+mistakes I had made in my implementation of the in-process LS/formatter. That
+spun out into a fairly deep rabbit hole.
 
 The main issue was concerned with one parameter I was passing to the exit
 notification a server is meant to react to in the LSP spec. One of those
@@ -29,6 +29,12 @@ So I was essentially passing a string where a number was expected. Of course, I
 could have simply replaced the signal number I was interested in reporting
 through, but that didn't seem like a good enough solution.
 
+#html.blockquote[*Edit (one day after:)* in the following paragraph I mention
+  that LuaJIT is the Lua implementation that comes packed with Neovim. This is
+  not entirely accurate because it's really Lua 5.1 that comes packed with
+  Neovim. Though LuaJIT is based on Lua 5.1, and the Neovim documentation
+  recommends its use over vanilla Lua @neovim-luajit.]
+
 So I instead started reading through the LuaJIT documentation. LuaJIT is the Lua
 implementation that comes embedded in Neovim. I had read somewhere that it had a
 fairly decent FFI story to interoperate with C, so I gave it a go.
@@ -37,7 +43,7 @@ After much reading and sidetracking to experiment, I reached the part of the
 documentation that mentions declared C bindings are not run through a
 preprocessor. This meant I couldn't just paste right in the `signal.h` header.
 
-All of those signals are `#defined`, which means I would have had to pre-process
+All of those signals are `#define`d, which means I would have had to pre-process
 the header files to change them into C `enum`s or `static const`s. Before I
 reached this point, though, a few other things happened.
 
@@ -74,3 +80,5 @@ refactor the Neovim configuration once more to get rid of the syntax extensions.
 That should hopefully clear out the way for setting up `tinymist` (the Typst
 language server,) and HLS (the Haskell language server.) Then I will finally be
 able to come back to my main work.
+
+#bibliography("bib.yaml")

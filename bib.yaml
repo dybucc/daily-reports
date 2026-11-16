@@ -1,10 +1,18 @@
-lorem:
+neovim-luajit:
   type: entry
-  title: "Lorem ipsum dolor sit amet"
-  author:
-    - given-name: Lorem
-      name: Ipsum
-      alias: dolor
+  title: "Introduction"
   url:
-    value: "https://example.com"
-    date: 2001-01-01
+    value: "https://neovim.io/doc/user/lua/#lua-luajit"
+    date: 2026-11-16
+  parent:
+    type: article
+    title: "Lua engine"
+    url:
+      value: "https://neovim.io/doc/user/lua/"
+      date: 2026-11-16
+    parent:
+      type: reference
+      title: "Nvim documentation"
+      url:
+        value: "https://neovim.io/doc/user/"
+        date: "2026-11-16"
