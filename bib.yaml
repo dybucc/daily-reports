@@ -1,3 +1,21 @@
+hughes-1990:
+  type: article
+  title: "Why functional programming matters"
+  author:
+    name: Hughes
+    given-name: John
+  parent:
+    type: book
+    title: "Research topics in functional programming"
+    date: 1990
+    editor:
+      name: Turner
+      given-name: David A.
+    publisher: "Addison-Wesley Longman Publishing Co., Inc."
+    location: "USA"
+    serial-number:
+      isbn: 0201172364
+
 neovim-luajit:
   type: entry
   title: "Introduction"
