@@ -7,7 +7,7 @@
 = Summary
 Today work has focused on two things --- The `ctest` extension matters and the
 arithmetic evaluator. Both of them have seen very slow progress as a consequence
-of the proofs of both boolean equality and excluded middle taking quite long.
+of the proofs of boolean equality (resp. excluded middle) taking quite long.
 
 On the `ctest` side of things, I've been busy proving reflexivity of boolean
 equality between items. This followed up from yesterday's attempts, but I've yet
