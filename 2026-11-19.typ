@@ -37,7 +37,7 @@ I think I will apply this more generally. I shouldn't sink into tasks as hard as
 I do on the regular. Discipline and work should always be there, but there is no
 isomorphism between those and mental torture. The latter is also a time sink.
 
-Anyway. I'll probably upload my solutions to the problem sets form the theorem
+Anyway. I'll probably upload my solutions to the problem sets from the theorem
 proving book somewhere. Unlike tacit programming, I don't yet have an eye to see
 beauty in a proof, so I won't bother showcasing any examples in the report.
 
