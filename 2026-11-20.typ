@@ -13,7 +13,7 @@ I started off by giving some more thought to the last proof that remained from
 yesterday's work on the Lean theorem proving book. This I couldn't figure out
 after a while of trying my hand at different approaches, so I let it be for now.
 
-Then I went on to work ont the `ctest` extension matters, which I have almost
+Then I went on to work on the `ctest` extension matters, which I have almost
 finished. The implementation for the codata pattern detection algorithm is done
 but I've yet to debug it. The idea is as explained in early reports this week.
 
