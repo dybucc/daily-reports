@@ -33,7 +33,7 @@ template_submod := trim(shell(f'
 
 info(msg) := f"{{ style("bold", "[INFO]") }}: {{ msg }}"
 
-# [NOTE]: we set up the same environment variables across recipes because their
+# NOTE: we set up the same environment variables across recipes because their
 # values depend on a lazily computed just variable that itself depends on some
 # programs being available in PATH, which themselves depend on the `prepare`
 # recipe in CI.

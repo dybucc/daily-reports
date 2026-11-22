@@ -1,4 +1,4 @@
-#import "@local/scratchpad:0.1.4": *
+#import "@local/scratchpad:0.1.5": *
 
 #show: template.with(title: [Daily report (2026-11-15)])
 
