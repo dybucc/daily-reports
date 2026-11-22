@@ -29,11 +29,16 @@ The proposition we're trying to prove is that a proposition $P$ holding for some
 $x$ and leading to the implication of an unrelated proposition $R$, itself can
 only hold if, provided a proof of $P$ for all $x$, $R$ follows.
 
-This holds in both directions, but a more formal statement will do a better job
-of expressing this.
+This holds in both directions, but a more formal (though notably not quite
+formal) statement will do a better job of expressing this.
+
+#let open_paren = math.class("opening")[(]
+#let close_paren = math.class("closing")[)]
 
 $
-  exists x, P(x) => R <=> (forall x, P(x)) => R.
+  exists x, P#open_paren;x#close_paren => R
+  <=>
+  #open_paren;forall x, P#open_paren;x#close_paren;#close_paren => R.
 $ <nonum-eq>
 
 The idea is that for a non-dependent proposition $R$, we can both separate its
