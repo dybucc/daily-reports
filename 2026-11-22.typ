@@ -21,7 +21,7 @@ In thinking this was a waste of time because I wasn't even stuck on a problem, I
 decided to go read about Common Lisp. I had recently heard it was a nice tool to
 get things done fast while still getting performance without worrying about it.
 
-Considering the desperate need I am of showcasing stuff I've done, this was
+Considering the desperate need I am in of showcasing stuff I've done, this was
 fairly appealing to me. Rust makes me worry about details I need not bother
 about, and Lean makes me want to forget programming and just do proofs.
 
@@ -40,6 +40,9 @@ but I failed to set them up in my workstation.
 That was the main distraction today. I have failed in delivering all problems
 from the Lean functional programming book chapter on monads. And I have only
 solved one more proof in the chapter before tactics of the theorem proving book.
+
+#html.blockquote[*Edit (one day after:)* the following paragraph is a bit much,
+  and I wasn't quite thinking straight when I wrote it. Pardon my berating.]
 
 Peak mediocrity, and a mind that doesn't want to do more even though I provide
 it with plenty of healthy stimulus. What a worthless, miserable, useless piece
