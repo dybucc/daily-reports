@@ -19,7 +19,7 @@ Here I had to start testing out the codata detection algorithm.
 
 Thus far, I've not fixed that many bugs, and I'm currently pondering at how come
 the function that cleanses the nested occurrences of a module off of its subtree
-is somehow not quite removing it.
+is somehow not quite removing them.
 
 Lean-wise, I've finished the problem set in the section of the chapter on monads
 I was currently working through. I also gave the harder proof in chapter 4 of
