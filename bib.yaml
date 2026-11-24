@@ -1,3 +1,14 @@
+smullyan-1985:
+  type: book
+  title: "To mock a mockingbird"
+  author:
+    name: Smullyan
+    given-name: Raymond
+  date: 1985
+  publisher: "Knopf"
+  serial-number:
+    isbn:	0192801422
+
 hughes-1990:
   type: article
   title: "Why functional programming matters"
