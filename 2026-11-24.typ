@@ -71,7 +71,7 @@ from the use of the #sym.sum combinator, also known as the violet scarling.
 
 Before the line where it is used, I've also left the definition that does not
 use this combinator. It just so happened that I looked twice at the function
-abstraction (the initial comment,) and thought this surely was a known pattern.
+abstraction (the initial comment), and thought this surely was a known pattern.
 
 Application of a binary function over a nullary function and a unary function
 that is itself applied over the nullary function is known in combinatory logic

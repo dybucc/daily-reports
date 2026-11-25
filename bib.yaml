@@ -1,13 +1,13 @@
 smullyan-1985:
   type: book
-  title: "To mock a mockingbird"
+  title: "To Mock a Mockingbird: and Other Logic Puzzles"
   author:
     name: Smullyan
     given-name: Raymond
   date: 1985
   publisher: "Knopf"
   serial-number:
-    isbn:	0192801422
+    isbn: 9780192801425
 
 hughes-1990:
   type: article
